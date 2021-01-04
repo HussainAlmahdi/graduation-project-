@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/text"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:gravity="center">
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/join_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:hint="البريد الالكتروني"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textStyle="bold"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/edittext_style"/>
+    <EditText
+        android:hint="كلمة المرور"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textStyle="bold"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/edittext_style"/>
+    <EditText
+        android:hint="رقم الهاتف (اختياري)"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textStyle="bold"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/edittext_style"/>
+    <EditText
+        android:hint="اسم المستخدم"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textStyle="bold"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/edittext_style"/>
+    <EditText
+        android:hint="الاسم"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textStyle="bold"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/edittext_style"/>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/join_Button"
+        tools:background="@color/black"
+        android:layout_margin="8dp"
+        android:text="انضم"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/sign_in_layout"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:hint="البريد الالكتروني"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textStyle="bold"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/edittext_style"/>
+    <EditText
+        android:hint="كلمة المرور"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textStyle="bold"
+        tools:background="@color/black"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/edittext_style"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/sign_in_button"
+        tools:background="@color/black"
+        android:layout_margin="8dp"
+        android:text="تسجيل دخول"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
+
+    <TextView
+        android:textColor="@color/purple_500"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="سجل كعمل"
+        />
+
+
+
+</LinearLayout>
