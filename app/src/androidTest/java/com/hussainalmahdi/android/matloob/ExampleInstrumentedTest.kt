@@ -1,4 +1,4 @@
-package com.hussainalmahdi.android.zyara
+package com.hussainalmahdi.android.matloob
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

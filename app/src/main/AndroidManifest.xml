@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Zyara">
+        <activity android:name="com.hussainalmahdi.android.matloob.ActivityAfterLogIn"></activity>
         <activity android:name="com.hussainalmahdi.android.matloob.RegisterAsBusiness" />
-        <activity android:name="com.hussainalmahdi.android.matloob.ActivityAfterLogIn">
+        <activity android:name="com.hussainalmahdi.android.matloob.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
