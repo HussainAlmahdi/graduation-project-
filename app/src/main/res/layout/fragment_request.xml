@@ -14,12 +14,15 @@
     tools:context="com.hussainalmahdi.android.matloob.RequestFragment">
 
 <TextView
+    android:textSize="20dp"
+    android:textStyle="bold"
     android:textColor="@color/purple_500"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="طلبات قيد الانتظار"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        tools:listitem="@layout/item_request"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="4"
@@ -28,10 +31,13 @@
     <TextView
         android:textColor="@color/purple_500"
         android:layout_width="match_parent"
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
         android:text="الطلبات السابقة"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        tools:listitem="@layout/item_request"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="4"
