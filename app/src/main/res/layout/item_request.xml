@@ -5,17 +5,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="150dp"
+    android:layout_margin="4dp"
+    android:backgroundTint="@color/list_background"
     android:id="@+id/cardView"
-    android:background="@color/purple_500"
-    android:backgroundTint="@color/text">
-    <View
+    app:cardCornerRadius="10dp"
+    android:background="@color/purple_500">
+   <!-- <View
         style="@style/Divider.Vertical"
         android:layout_marginStart="330dp"
         android:background="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />-->
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -47,7 +49,7 @@
             android:layout_marginEnd="148dp"
             android:layout_marginBottom="82dp"
             android:layout_marginRight="400dp"
-            android:textColor="@color/white"
+            android:textColor="@color/text"
             android:textSize="24dp"
             android:textStyle="bold"
             android:text="مكتبة جرير"
@@ -62,7 +64,7 @@
             android:layout_marginEnd="148dp"
             android:layout_marginBottom="58dp"
             android:layout_marginRight="400dp"
-            android:textColor="@color/white"
+            android:textColor="@color/text"
             android:textSize="18dp"
             android:text="الكترونيات"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -76,7 +78,7 @@
             android:layout_marginEnd="148dp"
             android:layout_marginBottom="28dp"
             android:layout_marginRight="400dp"
-            android:textColor="@color/white"
+            android:textColor="@color/text"
             android:textSize="18dp"
             android:text="مطلوب 10 اجهزة محمولة..."
             app:layout_constraintBottom_toBottomOf="parent"
@@ -88,7 +90,7 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="112dp"
             android:text="2020-12-12 15:21"
-            android:textColor="@color/white"
+            android:textColor="@color/text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

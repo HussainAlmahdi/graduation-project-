@@ -7,12 +7,12 @@ import android.os.Bundle
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.LinearLayout
+import android.widget.*
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
+import com.hussainalmahdi.android.matloob.remotesource.RemoteSource
 import com.hussainalmahdi.android.zyara.R
 
 
@@ -31,7 +31,11 @@ class MainActivity : AppCompatActivity() {
         val signInLayout: LinearLayout = findViewById(R.id.sign_in_layout)
         val joinButton: Button = findViewById(R.id.join_Button)
         val signInButton: Button = findViewById(R.id.sign_in_button)
+        val LoginEmailEditText: EditText = findViewById(R.id.login_email_edit_text)
+        val LoginPasswordEditText: EditText = findViewById(R.id.login_password_edit_text)
+
         businessLogo = findViewById(R.id.business_logo)
+
 
 
         businessLogo.setOnClickListener {
@@ -58,8 +62,21 @@ class MainActivity : AppCompatActivity() {
             val animationOut: Animation = AnimationUtils.loadAnimation(this, R.anim.slide_out)
 
             if (signInLayout.visibility == View.VISIBLE) {
-                val intent = Intent(this, ActivityAfterLogIn::class.java)
-                startActivity(intent)
+
+               val responseCode = RemoteSource().login( LoginEmailEditText.text.toString(),
+                       LoginPasswordEditText.text.toString())
+                responseCode.observe(
+                    this, Observer {code ->
+                        if (code ==200){
+                            val intent = Intent(this, ActivityAfterLogIn::class.java)
+                            startActivity(intent)
+                        }
+                        else {
+                        Toast.makeText(this,"Wrong Email/Password", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                )
+
             }
 
             else{
