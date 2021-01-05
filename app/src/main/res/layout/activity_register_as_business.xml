@@ -11,13 +11,6 @@
     tools:context="com.hussainalmahdi.android.matloob.MainActivity"
     android:gravity="center">
 
-    <LinearLayout
-        android:visibility="gone"
-        android:id="@+id/join_layout"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
     <EditText
         android:hint="البريد الالكتروني"
         android:textAlignment="center"
@@ -37,7 +30,7 @@
         android:layout_height="30dp"
         android:background="@drawable/edittext_style"/>
     <EditText
-        android:hint="رقم الهاتف (اختياري)"
+        android:hint="اسم المنشأة"
         android:textAlignment="center"
         android:textColor="@color/text"
         android:textStyle="bold"
@@ -46,7 +39,23 @@
         android:layout_height="30dp"
         android:background="@drawable/edittext_style"/>
     <EditText
-        android:hint="اسم الشركة"
+        android:hint="السجل الضريبي"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textStyle="bold"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/edittext_style"/>
+
+    <!---->
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:hint="نوع المنشأة"
         android:textAlignment="center"
         android:textColor="@color/text"
         android:textStyle="bold"
@@ -55,7 +64,25 @@
         android:layout_height="30dp"
         android:background="@drawable/edittext_style"/>
     <EditText
-        android:hint="وصف الشركة"
+        android:hint="أوقات الفتح"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textStyle="bold"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/edittext_style"/>
+    <EditText
+        android:hint="اسم المنشأة"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textStyle="bold"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/edittext_style"/>
+    <EditText
+        android:hint="السجل الضريبي"
         android:textAlignment="center"
         android:textColor="@color/text"
         android:textStyle="bold"
@@ -64,29 +91,7 @@
         android:layout_height="30dp"
         android:background="@drawable/edittext_style"/>
 
-        <EditText
-            android:hint="الخدمات المقدمة (اختياري)"
-            android:textAlignment="center"
-            android:textColor="@color/text"
-            android:textStyle="bold"
-            android:layout_margin="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:background="@drawable/edittext_style"/>
-
-        <Button
-            android:text="شعار الشركة"
-            android:textAlignment="center"
-            android:textColor="@color/text"
-            android:textStyle="bold"
-            android:layout_margin="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"/>
-
-
-
-    </LinearLayout>
+</LinearLayout>
     <Button
         android:id="@+id/join_Button"
         tools:background="@color/black"
@@ -94,49 +99,4 @@
         android:text="انضم"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
-
-
-    <LinearLayout
-        android:id="@+id/sign_in_layout"
-        android:orientation="vertical"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    <EditText
-        android:hint="البريد الالكتروني"
-        android:textAlignment="center"
-        android:textColor="@color/text"
-        android:textStyle="bold"
-        android:layout_margin="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="@drawable/edittext_style"/>
-    <EditText
-        android:hint="كلمة المرور"
-        android:textAlignment="center"
-        android:textColor="@color/text"
-        android:textStyle="bold"
-        tools:background="@color/black"
-        android:layout_margin="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="@drawable/edittext_style"/>
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/sign_in_button"
-        tools:background="@color/black"
-        android:layout_margin="8dp"
-        android:text="تسجيل دخول"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="60dp"/>
-
-
-
 </LinearLayout>

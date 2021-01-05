@@ -1,13 +1,16 @@
-package com.hussainalmahdi.android.zyara
+package com.hussainalmahdi.android.matloob
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
+import com.hussainalmahdi.android.zyara.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,8 +27,8 @@ class MainActivity : AppCompatActivity() {
 
 
         joinButton.setOnClickListener {
-            val animationIn: Animation = AnimationUtils.loadAnimation(this, R.anim.slide_in )
-            val animationOut: Animation = AnimationUtils.loadAnimation(this, R.anim.slide_out )
+            val animationIn: Animation = AnimationUtils.loadAnimation(this, R.anim.slide_in)
+            val animationOut: Animation = AnimationUtils.loadAnimation(this, R.anim.slide_out)
 
             joinLayout.visibility = View.VISIBLE
             joinLayout.startAnimation(animationIn)
@@ -35,8 +38,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         signInButton.setOnClickListener {
-            val animationIn: Animation = AnimationUtils.loadAnimation(this, R.anim.slide_in )
-            val animationOut: Animation = AnimationUtils.loadAnimation(this, R.anim.slide_out )
+            val animationIn: Animation = AnimationUtils.loadAnimation(this, R.anim.slide_in)
+            val animationOut: Animation = AnimationUtils.loadAnimation(this, R.anim.slide_out)
 
 
             signInLayout.visibility = View.VISIBLE
@@ -45,10 +48,5 @@ class MainActivity : AppCompatActivity() {
             joinLayout.startAnimation(animationOut)
             joinLayout.visibility = View.GONE
         }
-
-
-
-
-
     }
 }
