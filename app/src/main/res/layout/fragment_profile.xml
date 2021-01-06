@@ -3,12 +3,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/text"
     tools:context="com.hussainalmahdi.android.matloob.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        tools:srcCompat="@tools:sample/avatars"
+        android:layout_gravity="center"
+        android:layout_marginBottom="200dp"
+        android:id="@+id/picture"
+        />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="profile" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="هواوي"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:layout_marginBottom="90dp"
+        android:id="@+id/name"
+
+        />
+    <View
+        style="@style/Divider.Horizontal2"
+        android:background="@color/purple_500"
+        android:layout_width="30dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="60dp"
+        />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:text="شركة مختصه بشريحه متنوعه من الالكترونيات"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+
+        />
+
+    <View
+        style="@style/Divider.Horizontal2"
+        android:background="@color/purple_500"
+        android:layout_width="30dp"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="admin@huawei.com"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:textSize="15dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/email"
+
+        />
+
+
+    <View
+        style="@style/Divider.Horizontal2"
+        android:background="@color/purple_500"
+        android:layout_width="30dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        />
+
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/google_maps"
+        android:layout_gravity="center"
+        android:layout_marginTop="90dp"
+        android:id="@+id/location"
+
+        />
+
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="250dp"
+        android:text="اريد ان اكون مقدم خدمات"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/provider"
+
+        />
 
 </FrameLayout>
