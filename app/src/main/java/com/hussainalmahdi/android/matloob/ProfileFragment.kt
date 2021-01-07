@@ -11,31 +11,28 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.hussainalmahdi.android.zyara.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var name: String? = null
+    private var phone:Double?=null
+    private var email: String? = null
+    private var description:String? =null
+    private var token:String? =null
+
     private lateinit var becomeProviderButton: Button
-    private lateinit var location:ImageView
+    private lateinit var profileName:TextView
+    private lateinit var profilePhone:TextView
+    private lateinit var profileDescription:TextView
+    private lateinit var profileEmail:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+        name =  arguments?.getString("name")
+        phone = arguments?.getDouble("phone")
+        email =  arguments?.getString("email")
+        description=  arguments?.getString("description")
+        token=  arguments?.getString("token")
 
-        }
     }
 
     override fun onCreateView(
@@ -44,36 +41,32 @@ class ProfileFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
+        profileName=view.findViewById(R.id.profile_name)
+        profilePhone=view.findViewById(R.id.profile_phone)
+        profileDescription=view.findViewById(R.id.profile_description)
+        profileEmail=view.findViewById(R.id.profile_email)
+
+        profileName.text =name
+        profilePhone.text = phone.toString()
+        profileDescription.text =email
+        profileEmail.text =description
 
         becomeProviderButton= view.findViewById(R.id.provider)
-        location=view.findViewById(R.id.location)
         becomeProviderButton.setOnClickListener {
+            val fragment = ProviderDetailFragment()
+            val args = Bundle().apply {
+                putString("token", token)
+            }
+            fragment.arguments = args
             var fr = getFragmentManager()?.beginTransaction()
        //     fr?.replace(R.id.fragment, ProviderDetailFragment())
-            fr?.replace(R.id.fragment_container, ProviderDetailFragment())
+            fr?.replace(R.id.fragment_container,fragment )
             fr?.commit()
         }
-        location.setOnClickListener{
-            var fr = getFragmentManager()?.beginTransaction()
-            //     fr?.replace(R.id.fragment, MapsFragment())
-            fr?.replace(R.id.fragment_container, MapsFragment())
-            fr?.commit()
-        }
+
 
 
         return view
     }
 
-    companion object {
-
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ProfileFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

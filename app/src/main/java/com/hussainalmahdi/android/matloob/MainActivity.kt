@@ -1,13 +1,8 @@
 package com.hussainalmahdi.android.matloob
 
-import android.R.attr
-import android.content.ContentResolver
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.provider.CalendarContract.Attendees.query
-import android.provider.CalendarContract.EventDays.query
-import android.provider.CalendarContract.Instances.query
 import android.util.Log
 import android.view.View
 import android.view.animation.Animation
@@ -17,7 +12,6 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
-import com.hussainalmahdi.android.matloob.remotesource.DataBaseService
 import com.hussainalmahdi.android.matloob.remotesource.RemoteSource
 import com.hussainalmahdi.android.zyara.R
 import okhttp3.MediaType
@@ -27,7 +21,6 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.File
-import java.io.InputStream
 
 
 private const val SELECT_PICTURE = 1
@@ -79,9 +72,16 @@ class MainActivity : AppCompatActivity() {
                val responseCode = RemoteSource().login( LoginEmailEditText.text.toString(),
                        LoginPasswordEditText.text.toString())
                 responseCode.observe(
-                    this, Observer {code ->
-                        if (code ==200){
+                    this, Observer {response ->
+                        if (response.responseCode ==200){
                             val intent = Intent(this, ActivityAfterLogIn::class.java)
+                            intent.apply {
+                                putExtra("name",response.name)
+                                putExtra("phone",response.phoneNumber)
+                                putExtra("email",response.email)
+                                putExtra("description",response.description)
+                                putExtra("token",response.token)
+                            }
                             startActivity(intent)
                         }
                         else {
@@ -113,8 +113,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-
 
 
 

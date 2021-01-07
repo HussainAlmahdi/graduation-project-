@@ -23,19 +23,59 @@ class RemoteSource {
 
      val dataBaseService: DataBaseService = retrofit.create(DataBaseService::class.java)
 
-        fun login(username: String, password: String):LiveData<Int>{
-            val responseLiveData: MutableLiveData<Int> = MutableLiveData()
+        fun login(username: String, password: String):LiveData<ProfileInfo>{
+
+            val responseLiveData: MutableLiveData<ProfileInfo> = MutableLiveData()
 
             dataBaseService.login(Auth(username, password)).enqueue(
-                object : Callback<Any> {
-                    override fun onResponse(call: Call<Any>, response: Response<Any>) {
-                        responseLiveData.value = response.code()
-                        Log.d("response", response.code().toString())
+                object : Callback<ProfileInfo> {
+                    override fun onResponse(call: Call<ProfileInfo>, response: Response<ProfileInfo>) {
+                               response.body()?.responseCode =response.code()
+                        responseLiveData.value = response.body()
+                        Log.d("response", response.body().toString())
                     }
 
-                    override fun onFailure(call: Call<Any>, t: Throwable) {
+                    override fun onFailure(call: Call<ProfileInfo>, t: Throwable) {
                     }
                 })
             return responseLiveData
         }
+
+    fun addRequest(token:String,post:Post){
+        dataBaseService.addRequest(token,post).enqueue(
+            object : Callback<Any> {
+                override fun onResponse(call: Call<Any>, response: Response<Any>) {
+                    Log.d("request response ",response.toString())
+                }
+
+                override fun onFailure(call: Call<Any>, t: Throwable) {
+                    Log.e("error",t.toString())
+
+                }
+            })
+    }
+
+    fun autocomplete(token:String,text:String):MutableLiveData<List<Hshtags>> {
+        val autocompleteResult: MutableLiveData<List<Hshtags>> = MutableLiveData()
+
+        dataBaseService.autocomplete(token,text).enqueue(
+            object : Callback<List<Hshtags>> {
+                override fun onResponse(call: Call<List<Hshtags>>, response: Response<List<Hshtags>>) {
+
+
+                    val SearchResult=response.body()
+                    if(SearchResult!=null){
+                        autocompleteResult.value = SearchResult}
+                    Log.d("autocomplete response ",response.toString())
+                }
+
+                override fun onFailure(call: Call<List<Hshtags>>, t: Throwable) {
+                    Log.e("error",t.toString())
+
+                }
+            })
+        return autocompleteResult
+    }
+
+
 }

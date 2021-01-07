@@ -1,16 +1,22 @@
 package com.hussainalmahdi.android.matloob.remotesource
 
-import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.Multipart
-import retrofit2.http.POST
-import retrofit2.http.Part
+import retrofit2.http.*
 
 interface DataBaseService {
     @POST("login")
-    fun login(@Body auth:Auth): Call<Any>
+    fun login(@Body auth:Auth): Call<ProfileInfo>
+
+    @POST("request")
+    fun addRequest(
+        @Header("token") authHeader:String,
+        @Body post:Post): Call<Any>
+
+    @GET("/hashtag/autocomplete/{text}")
+    fun autocomplete(
+        @Header("token") authHeader:String,
+        @Path("text") text:String) :Call<List<Hshtags>>
 
 @Multipart
     @POST("register")
