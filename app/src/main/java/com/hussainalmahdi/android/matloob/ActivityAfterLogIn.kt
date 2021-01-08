@@ -38,7 +38,12 @@ class ActivityAfterLogIn : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.chat -> {
+                    val args = Bundle().apply {
+                        putString("token",token)
+                    }
                     val fragment = ChatFragment()
+                    fragment.arguments =args
+
                     val fm = this.supportFragmentManager
                     fm.beginTransaction()
                         .setCustomAnimations(
@@ -93,7 +98,11 @@ class ActivityAfterLogIn : AppCompatActivity() {
                 }
 
                 R.id.timeline -> {
+                    val args = Bundle().apply {
+                        putString("token",token)
+                    }
                     val fragment = TimeLineFragment()
+                    fragment.arguments =args
                     val fm = this.supportFragmentManager
                     fm.beginTransaction()
                         .setCustomAnimations(

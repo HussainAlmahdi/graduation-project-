@@ -12,12 +12,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="الخدمات التي تزودها" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="50dp"
+            android:text="+"
+            android:background="@drawable/edit_text_syle_2"
+            android:textStyle="bold"
+            android:id="@+id/provide_tags_button"
+            android:layout_height="wrap_content" />
 
     <AutoCompleteTextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:id="@+id/autoCompleteEditText"
         android:background="@drawable/edittext_style"/>
+
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
@@ -30,3 +45,13 @@
         android:textStyle="bold" />
 
 </LinearLayout>
+
+
+
+
+
+
+
+
+
+

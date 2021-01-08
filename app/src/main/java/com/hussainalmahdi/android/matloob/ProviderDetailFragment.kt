@@ -9,17 +9,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.widget.TextView
+import android.widget.*
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.hussainalmahdi.android.matloob.remotesource.Hashtags
 import com.hussainalmahdi.android.matloob.remotesource.RemoteSource
 import com.hussainalmahdi.android.zyara.R
 
 class ProviderDetailFragment : Fragment() {
     private lateinit var searchEditText: AutoCompleteTextView
     private lateinit var addTasksRecyclerView: RecyclerView
+    private lateinit var provideTagsButton: Button
     private var token:String? =null
 
 
@@ -38,6 +39,7 @@ class ProviderDetailFragment : Fragment() {
         searchEditText =view.findViewById(R.id.autoCompleteEditText)
         addTasksRecyclerView=view.findViewById(R.id.add_tags_recycler_view)
         addTasksRecyclerView.layoutManager= LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL,true)
+        provideTagsButton =view.findViewById(R.id.provide_tags_button)
 
         return view
     }
@@ -45,6 +47,10 @@ class ProviderDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        RemoteSource().getHashtag(token!!).observe(
+            viewLifecycleOwner, Observer { tags->
+                addTasksRecyclerView.adapter =TagsAdapter(tags)
+            })
 
 
         searchEditText.addTextChangedListener(object : TextWatcher {
@@ -72,10 +78,24 @@ class ProviderDetailFragment : Fragment() {
 
         })
 
+        val numbers = mutableListOf<String>()
+
+        provideTagsButton.setOnClickListener {
+
+            RemoteSource().getHashtag(token!!)
+
+            RemoteSource().addHashtag(token!!,searchEditText.text.toString())
+
+            RemoteSource().getHashtag(token!!).observe(
+                viewLifecycleOwner, Observer { tags->
+                    addTasksRecyclerView.adapter =TagsAdapter(tags)
+                })
+
+            Log.d("list",numbers.toString())
+            searchEditText.text.clear()
+        }
 
 
-        val numbers = mutableListOf<String>("one","two","three")
-        addTasksRecyclerView.adapter =TagsAdapter(numbers)
 
     }
 
@@ -84,7 +104,7 @@ class ProviderDetailFragment : Fragment() {
         val tagTextView: TextView =itemView.findViewById(R.id.tag_content)
     }
 
-    private inner class TagsAdapter(var tags: List<String>)
+    private inner class TagsAdapter(var tags: List<Hashtags>)
         :  RecyclerView.Adapter<TagHolder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TagHolder {
             val view = layoutInflater.inflate(R.layout.item_list_tags, parent, false)
@@ -97,7 +117,7 @@ class ProviderDetailFragment : Fragment() {
             val tag =tags[position]
 
 
-            holder.tagTextView.text =tag
+            holder.tagTextView.text =tag.hashtag
 
         }
 

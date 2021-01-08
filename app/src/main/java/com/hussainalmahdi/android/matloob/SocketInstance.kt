@@ -4,7 +4,7 @@ import android.app.Application
 import com.github.nkzawa.socketio.client.IO
 import com.github.nkzawa.socketio.client.Socket
 import java.net.URISyntaxException
-private const val URL = "https://yourSocketURL.com"
+private const val URL = "https://matloob.herokuapp.com/"
 
 class SocketInstance : Application() {
     //socket.io connection url

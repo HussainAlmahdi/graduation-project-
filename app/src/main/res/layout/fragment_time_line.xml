@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView
+<LinearLayout
     android:background="@color/text"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+<androidx.recyclerview.widget.RecyclerView
+    android:layout_weight="1"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:orientation="horizontal"
+    android:id="@+id/hashtags_timeline_recyclerview" />
+
+<androidx.recyclerview.widget.RecyclerView
+    android:layout_weight="15"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
     tools:listitem="@layout/item_request"
     android:id="@+id/timeline_recyclerview"
     tools:context="com.hussainalmahdi.android.matloob.TimeLineFragment"/>
+</LinearLayout>
