@@ -13,6 +13,7 @@ import android.widget.*
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.hussainalmahdi.android.matloob.remotesource.AddHashtag
 import com.hussainalmahdi.android.matloob.remotesource.Hashtags
 import com.hussainalmahdi.android.matloob.remotesource.RemoteSource
 import com.hussainalmahdi.android.zyara.R
@@ -84,7 +85,10 @@ class ProviderDetailFragment : Fragment() {
 
             RemoteSource().getHashtag(token!!)
 
-            RemoteSource().addHashtag(token!!,searchEditText.text.toString())
+
+            val addHashtag =AddHashtag(hashtags = numbers)
+
+            RemoteSource().addHashtag(token!!,addHashtag)
 
             RemoteSource().getHashtag(token!!).observe(
                 viewLifecycleOwner, Observer { tags->

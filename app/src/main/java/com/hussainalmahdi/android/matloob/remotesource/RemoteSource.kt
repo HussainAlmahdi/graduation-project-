@@ -99,8 +99,8 @@ class RemoteSource {
 
 
 
-    fun addHashtag(token: String, hashtag: String){
-        dataBaseService.addHashtags(token, hashtag).enqueue(
+    fun addHashtag(token: String, addHashtag: AddHashtag){
+        dataBaseService.addHashtags(token, addHashtag).enqueue(
             object : Callback<Any> {
                 override fun onResponse(call: Call<Any>, response: Response<Any>) {
                     Log.d("add hashtag response ", response.toString())

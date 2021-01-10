@@ -18,7 +18,7 @@ interface DataBaseService {
     @POST("hashtag")
     fun addHashtags(
         @Header("token") authHeader:String,
-        @Query("text") hashtag:String
+        @Body addHashtag:AddHashtag,
     ): Call<Any>
 
     @GET("user/hashtag")
