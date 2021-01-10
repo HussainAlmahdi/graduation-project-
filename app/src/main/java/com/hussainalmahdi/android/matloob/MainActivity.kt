@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity(),RegisterBody.UploadCallBack {
             Toast.makeText(this, "Socket is connected", Toast.LENGTH_SHORT).show()
         }
 
-
+/*
         // wait for sultan to complete this
         mSocket?.on("mesqsage") { args ->
             if (args[0] != null)
@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity(),RegisterBody.UploadCallBack {
                     Toast.makeText(this, "Data received from socket", Toast.LENGTH_SHORT).show()
                 }
             }
-        }
+        }*/
 
         //Disconnect
         mSocket?.on(Socket.EVENT_DISCONNECT) {

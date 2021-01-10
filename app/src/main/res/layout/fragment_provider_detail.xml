@@ -5,29 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.hussainalmahdi.android.matloob.ProviderDetailFragment">
+    android:background="@color/text"
+android:gravity="center"
+    tools:context="com.hussainalmahdi.android.matloob.ProviderDetailFragment"
+    >
 
     <TextView
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="الخدمات التي تزودها" />
+        android:text="الخدمات التي تزودها"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20dp"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
-            android:layout_width="50dp"
-            android:text="+"
+        <TextView
+            android:layout_width="40dp"
+            android:backgroundTint="@color/list_background"
             android:background="@drawable/edit_text_syle_2"
-            android:textStyle="bold"
+            android:layout_gravity="center"
             android:id="@+id/provide_tags_button"
-            android:layout_height="wrap_content" />
+            android:text="+"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            android:layout_height="37dp" />
 
-    <AutoCompleteTextView
+
+        <AutoCompleteTextView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="10dp"
+        android:layout_height="40dp"
         android:id="@+id/autoCompleteEditText"
         android:background="@drawable/edittext_style"/>
 

@@ -16,7 +16,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="عنوان الطلب"
-      android:textColor="@color/white"
+      android:textColor="@color/purple_500"
       android:textStyle="bold"
       android:textSize="24dp"
       android:layout_gravity="right"
@@ -29,8 +29,10 @@
         android:layout_gravity="center"
         android:layout_height="30dp"
         android:id="@+id/request_title"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
         android:hint="عنوان سيراه مزود الخدمة"
-        android:backgroundTint="@color/purple_500" />
+        android:backgroundTint="@color/list_background" />
 
 
 
@@ -40,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="اوصف الطلب"
-        android:textColor="@color/white"
+        android:textColor="@color/purple_500"
         android:textStyle="bold"
         android:textSize="24dp"
         android:layout_gravity="right"
@@ -54,7 +56,9 @@
         android:layout_width="370dp"
         android:layout_gravity="center"
         android:layout_height="330dp"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/list_background"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:hint="معلومات اضافية للطلب, السعر المتوقع..." />
 
 
@@ -62,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="نوع الطلب"
-        android:textColor="@color/white"
+        android:textColor="@color/purple_500"
         android:textStyle="bold"
         android:textSize="24dp"
         android:layout_gravity="right"
@@ -75,13 +79,19 @@
         android:orientation="horizontal">
 
 
-        <Button
-            android:layout_width="50dp"
-            android:text="+"
-            android:id="@+id/add_tags_button"
+
+        <TextView
+            android:layout_width="30dp"
+            android:backgroundTint="@color/list_background"
             android:background="@drawable/edit_text_syle_2"
+            android:layout_gravity="center"
+            android:id="@+id/add_tags_button"
+            android:text="+"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:gravity="center"
             android:textStyle="bold"
-            android:layout_height="wrap_content" />
+            android:layout_height="30dp" />
 
 
 
@@ -89,14 +99,16 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:hint="هاشتاقات متعلقة بالطلب, مثل: الكترونيات"
+        android:hint="هاشتاقات متعلقة بالطلب, مثل: #الكترونيات"
         android:layout_gravity="center"
         android:layout_height="30dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:id="@+id/tags_edit_text"
         android:background="@drawable/edit_text_syle_2"
-        android:backgroundTint="@color/purple_500"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:backgroundTint="@color/list_background"
        />
 </LinearLayout>
 
@@ -116,11 +128,12 @@
     <Button
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#c3fdff"
+        android:backgroundTint="@color/purple_500"
         android:layout_gravity="center"
+        android:layout_marginTop="30dp"
         android:id="@+id/send_Request"
         android:text="ارسل طلبك!"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
         />

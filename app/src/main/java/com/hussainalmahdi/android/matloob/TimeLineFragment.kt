@@ -76,9 +76,9 @@ class TimeLineFragment : Fragment() {
     }
 
 
+    private inner class TimeLineHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener  {
 
-
-    private inner class TimeLineHolder(view: View) : RecyclerView.ViewHolder(view) {
+        private lateinit var timeLineItem: TimeLineItem
         val timeLineOwnerTextView: TextView =itemView.findViewById(R.id.timeline_owner)
         val timelineTitleTextView: TextView =itemView.findViewById(R.id.timeline_title)
         val timelineDateTextView: TextView =itemView.findViewById(R.id.timeline_date)
@@ -87,9 +87,29 @@ class TimeLineFragment : Fragment() {
         val timelineDescription: TextView =itemView.findViewById(R.id.timeline_description)
 
 
+        init {
+            itemView.setOnClickListener(this)
+        }
 
+        fun timeLineInit(timeLineItem: TimeLineItem){
+            this.timeLineItem=timeLineItem
+        }
 
+        override fun onClick(v: View?) {
+            val args = Bundle().apply {
+                putString("description",timeLineItem.description)
+                putString("userName",timeLineItem.userName)
+                putString("owner",timeLineItem.owner)
+            }
 
+            val fragment = MakeOfferFragment()
+            fragment.arguments = args
+            val fm = activity?.supportFragmentManager
+            fm?.beginTransaction()
+                ?.replace(R.id.fragment_container, fragment)
+                ?.addToBackStack(null)
+                ?.commit()
+        }
 
 
     }
@@ -106,6 +126,8 @@ class TimeLineFragment : Fragment() {
         override fun onBindViewHolder(holder: TimeLineHolder, position: Int) {
             val tileLineItem =tileLineItems[position]
 
+
+            holder.timeLineInit(tileLineItem)
             holder.timelineHashtags.text =tileLineItem.hashtagsTitle.toString().replace("[", "").replace("]", "")
             holder.timeLineOwnerTextView.text =tileLineItem.userName
             holder.timelineTitleTextView.text =tileLineItem.title

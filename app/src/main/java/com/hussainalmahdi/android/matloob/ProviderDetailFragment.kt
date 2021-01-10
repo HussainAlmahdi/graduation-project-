@@ -21,7 +21,7 @@ import com.hussainalmahdi.android.zyara.R
 class ProviderDetailFragment : Fragment() {
     private lateinit var searchEditText: AutoCompleteTextView
     private lateinit var addTasksRecyclerView: RecyclerView
-    private lateinit var provideTagsButton: Button
+    private lateinit var provideTagsButton: TextView
     private var token:String? =null
 
 
@@ -86,13 +86,17 @@ class ProviderDetailFragment : Fragment() {
             RemoteSource().getHashtag(token!!)
 
 
+            numbers +=searchEditText.text.toString()
             val addHashtag =AddHashtag(hashtags = numbers)
 
             RemoteSource().addHashtag(token!!,addHashtag)
 
             RemoteSource().getHashtag(token!!).observe(
                 viewLifecycleOwner, Observer { tags->
+                    TagsAdapter(tags).notifyDataSetChanged()
+
                     addTasksRecyclerView.adapter =TagsAdapter(tags)
+
                 })
 
             Log.d("list",numbers.toString())

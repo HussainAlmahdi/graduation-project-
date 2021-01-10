@@ -24,7 +24,7 @@ import com.hussainalmahdi.android.zyara.R
 class NewRequestFragment : Fragment() {
     private var token: String? = null
     private lateinit var tagsRecyclerView:RecyclerView
-    private lateinit var addTagsButton: Button
+    private lateinit var addTagsButton: TextView
     private lateinit var sendRequestButton: Button
     private lateinit var titleEditText: EditText
     private lateinit var descriptionEditText: EditText

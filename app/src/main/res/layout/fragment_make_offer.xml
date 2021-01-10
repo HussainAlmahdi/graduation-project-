@@ -1,0 +1,104 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.hussainalmahdi.android.matloob.MakeOfferFragment"
+    android:background="@color/text">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/pizza"
+        android:id="@+id/offer_owner_image"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/offer_name"
+        android:text="البيتزا الملكية الفلكية"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#81d4fa"
+        android:layout_marginTop="140dp"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:background="@color/purple_500"
+        android:backgroundTint="@color/purple_500"
+        android:layout_gravity="center"
+        android:layout_marginBottom="130dp"
+        app:cardCornerRadius="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="الطلب"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            />
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="380dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/list_background"
+        android:id="@+id/cardView"
+        app:cardCornerRadius="10dp"
+        android:background="@color/purple_500">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/order"
+            android:text="مطلوب مليون بيتزا حاره مو بارده"
+            android:textColor="@color/black"
+            />
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:background="@color/purple_500"
+        android:backgroundTint="@color/purple_500"
+        android:layout_gravity="center"
+        android:layout_marginTop="300dp"
+        app:cardCornerRadius="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="قدم عرضك"
+            android:id="@+id/make_offer"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            />
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</FrameLayout>
