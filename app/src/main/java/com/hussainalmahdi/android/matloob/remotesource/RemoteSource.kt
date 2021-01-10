@@ -1,8 +1,5 @@
 package com.hussainalmahdi.android.matloob.remotesource
 
-import android.database.Cursor
-import android.net.Uri
-import android.provider.MediaStore
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -167,6 +164,26 @@ class RemoteSource {
                 }
             })
         return autocompleteResult
+    }
+
+
+    fun getMyRequests(token: String) :MutableLiveData<List<MyRequests>>{
+        val responseResult: MutableLiveData<List<MyRequests>> = MutableLiveData()
+        dataBaseService.getMyRequests(token).enqueue(
+            object : Callback<List<MyRequests>> {
+                override fun onResponse(
+                    call: Call<List<MyRequests>>,
+                    response: Response<List<MyRequests>>
+                ) {
+                    responseResult.value = response.body()
+                    Log.d("my requests response ", response.body().toString())
+                }
+                override fun onFailure(call: Call<List<MyRequests>>, t: Throwable) {
+                    Log.e("error", t.toString())
+
+                }
+            })
+        return responseResult
     }
 
 

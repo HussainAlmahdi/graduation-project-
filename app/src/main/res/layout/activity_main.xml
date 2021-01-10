@@ -27,6 +27,7 @@
 
     <EditText
         android:hint="البريد الالكتروني"
+        android:id="@+id/join_email"
         android:textAlignment="center"
         android:textColor="@color/text"
         android:textStyle="bold"
@@ -35,6 +36,7 @@
         android:layout_height="30dp"
         android:background="@drawable/edittext_style"/>
     <EditText
+        android:id="@+id/join_password"
         android:hint="كلمة المرور"
         android:textAlignment="center"
         android:textColor="@color/text"
@@ -45,6 +47,7 @@
         android:background="@drawable/edittext_style"/>
 
     <EditText
+        android:id="@+id/join_name"
         android:hint="اسم المنشأة"
         android:textAlignment="center"
         android:textColor="@color/text"
@@ -54,6 +57,7 @@
         android:layout_height="30dp"
         android:background="@drawable/edittext_style"/>
     <EditText
+        android:id="@+id/join_description"
         android:hint="وصف المنشأة"
         android:textAlignment="center"
         android:textColor="@color/text"
@@ -64,7 +68,8 @@
         android:background="@drawable/edittext_style"/>
 
         <EditText
-            android:hint="رقم الهتاف (اختياري)"
+            android:id="@+id/join_phone"
+            android:hint="رقم الهاتف "
             android:textAlignment="center"
             android:textColor="@color/text"
             android:textStyle="bold"

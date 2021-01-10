@@ -14,6 +14,7 @@ interface DataBaseService {
         @Header("token") authHeader:String,
         @Body post:Post): Call<Any>
 
+    /////array of hashtags
     @POST("hashtag")
     fun addHashtags(
         @Header("token") authHeader:String,
@@ -30,6 +31,12 @@ interface DataBaseService {
         @Header("token") authHeader:String,
     ): Call<List<TimeLineItem>>
 
+
+    @GET("/myrequests")
+    fun getMyRequests(
+        @Header("token") authHeader:String,
+    ): Call<List<MyRequests>>
+
     @GET("/hashtag/autocomplete/{text}")
     fun autocomplete(
         @Header("token") authHeader:String,
@@ -38,12 +45,13 @@ interface DataBaseService {
     @Multipart
     @POST("register")
     fun register(
-        @Part("email") email :RequestBody,
+        @Part("email") email:RequestBody,
         @Part("password") password:RequestBody,
         @Part("phoneNumber") phoneNumber:RequestBody,
         @Part("name") name:RequestBody,
         @Part("description") description:RequestBody,
         @Part("services") services:RequestBody,
-        @Part logo: MultipartBody.Part
+        @Part logo  : MultipartBody.Part
                 ): Call<Any>
+
 }

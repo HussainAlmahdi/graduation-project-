@@ -9,12 +9,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.hussainalmahdi.android.zyara.R
 
 
 class ProfileFragment : Fragment() {
     private var name: String? = null
-    private var phone:Double?=null
+    private var phone:String?=null
     private var email: String? = null
     private var description:String? =null
     private var token:String? =null
@@ -24,11 +25,12 @@ class ProfileFragment : Fragment() {
     private lateinit var profilePhone:TextView
     private lateinit var profileDescription:TextView
     private lateinit var profileEmail:TextView
+    private lateinit var profileImageView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         name =  arguments?.getString("name")
-        phone = arguments?.getDouble("phone")
+        phone = arguments?.getString("phone")
         email =  arguments?.getString("email")
         description=  arguments?.getString("description")
         token=  arguments?.getString("token")
@@ -45,11 +47,13 @@ class ProfileFragment : Fragment() {
         profilePhone=view.findViewById(R.id.profile_phone)
         profileDescription=view.findViewById(R.id.profile_description)
         profileEmail=view.findViewById(R.id.profile_email)
+        profileImageView =view.findViewById(R.id.profile_image)
 
         profileName.text =name
         profilePhone.text = phone.toString()
         profileDescription.text =email
         profileEmail.text =description
+       // Glide.with(profileImageView).load().into(profileImageView)
 
         becomeProviderButton= view.findViewById(R.id.provider)
         becomeProviderButton.setOnClickListener {

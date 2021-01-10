@@ -21,11 +21,11 @@
     android:text="طلبات قيد الانتظار"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pending_requests"
         tools:listitem="@layout/item_request"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4"
-        />
+        android:layout_weight="4" />
 
     <TextView
         android:textColor="@color/purple_500"
@@ -36,6 +36,7 @@
         android:text="الطلبات السابقة"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/previous_requests"
         tools:listitem="@layout/item_request"
         android:layout_width="match_parent"
         android:layout_height="0dp"

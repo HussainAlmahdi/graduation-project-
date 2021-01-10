@@ -1,103 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.cardview.widget.CardView  xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="wrap_content"
     android:layout_margin="4dp"
     android:backgroundTint="@color/list_background"
     android:id="@+id/cardView"
     app:cardCornerRadius="10dp"
     android:background="@color/purple_500">
-   <!-- <View
-        style="@style/Divider.Vertical"
-        android:layout_marginStart="330dp"
-        android:background="@color/purple_500"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />-->
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="128dp"
+        android:layout_height="wrap_content"
         android:layout_margin="8dp">
 
-
-
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/request_imageView"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginLeft="273dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginStart="288dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintVertical_bias="0.38"
             tools:srcCompat="@tools:sample/avatars" />
 
-
         <TextView
-
+            android:padding="4dp"
             android:id="@+id/timeline_owner"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginEnd="148dp"
-            android:layout_marginBottom="82dp"
-            android:layout_marginRight="400dp"
+            android:layout_height="wrap_content"
+            android:text="مكتبة جرير"
             android:textColor="@color/text"
             android:textSize="24dp"
             android:textStyle="bold"
-            android:text="مكتبة جرير"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/request_imageView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-
+            android:padding="4dp"
             android:id="@+id/timeline_hashtags"
             android:layout_width="200dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="148dp"
-            android:layout_marginBottom="58dp"
-            android:layout_marginRight="400dp"
-            android:textColor="@color/text"
-            android:textSize="18dp"
+            android:layout_height="wrap_content"
             android:text="الكترونيات"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <TextView
-
-            android:id="@+id/timeline_title"
-            android:layout_width="200dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="148dp"
-            android:layout_marginBottom="28dp"
-            android:layout_marginRight="400dp"
             android:textColor="@color/text"
             android:textSize="18dp"
-            android:text="مطلوب 10 اجهزة محمولة..."
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/request_imageView"
+            app:layout_constraintTop_toBottomOf="@+id/timeline_owner"
+            app:layout_constraintVertical_bias="0.0" />
+
 
         <TextView
+            android:padding="4dp"
+            android:id="@+id/timeline_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="مطلوب 10 اجهزة محمولة..."
+            android:textColor="@color/text"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/request_imageView"
+            app:layout_constraintTop_toBottomOf="@+id/timeline_hashtags"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/timeline_description"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:text="مطلوب 10 اجهزة محمولة..."
+            android:textColor="@color/text"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/request_imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timeline_title"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:padding="4dp"
             android:id="@+id/timeline_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="112dp"
             android:text="2020-12-12 15:21"
             android:textColor="@color/text"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
+            app:layout_constraintTop_toBottomOf="@+id/timeline_description"
+            app:layout_constraintVertical_bias="1.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.cardview.widget.CardView>
-

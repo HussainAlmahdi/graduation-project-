@@ -13,7 +13,7 @@
         tools:srcCompat="@tools:sample/avatars"
         android:layout_gravity="center"
         android:layout_marginBottom="200dp"
-        android:id="@+id/picture"
+        android:id="@+id/profile_image"
         />
 
     <TextView

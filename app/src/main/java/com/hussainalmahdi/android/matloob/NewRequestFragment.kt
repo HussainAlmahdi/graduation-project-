@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -39,7 +40,6 @@ class NewRequestFragment : Fragment() {
         token =  arguments?.getString("token")
 
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -53,6 +53,7 @@ class NewRequestFragment : Fragment() {
         sendRequestButton=view.findViewById(R.id.send_Request)
         titleEditText=view.findViewById(R.id.request_title)
         descriptionEditText=view.findViewById(R.id.request_description)
+
 
 
         tagsRecyclerView.layoutManager= LinearLayoutManager(activity,LinearLayoutManager.HORIZONTAL,true)
@@ -95,7 +96,6 @@ class NewRequestFragment : Fragment() {
         :  RecyclerView.Adapter<TagHolder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TagHolder {
             val view = layoutInflater.inflate(R.layout.item_list_tags, parent, false)
-
             return TagHolder(view)
         }
 

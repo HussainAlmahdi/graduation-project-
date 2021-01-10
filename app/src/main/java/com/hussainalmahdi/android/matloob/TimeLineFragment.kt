@@ -7,11 +7,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.hussainalmahdi.android.matloob.remotesource.Hashtags
 import com.hussainalmahdi.android.matloob.remotesource.RemoteSource
 import com.hussainalmahdi.android.matloob.remotesource.TimeLineItem
@@ -81,6 +83,10 @@ class TimeLineFragment : Fragment() {
         val timelineTitleTextView: TextView =itemView.findViewById(R.id.timeline_title)
         val timelineDateTextView: TextView =itemView.findViewById(R.id.timeline_date)
         val timelineHashtags: TextView =itemView.findViewById(R.id.timeline_hashtags)
+        val logoImageView: ImageView =itemView.findViewById(R.id.request_imageView)
+        val timelineDescription: TextView =itemView.findViewById(R.id.timeline_description)
+
+
 
 
 
@@ -104,6 +110,9 @@ class TimeLineFragment : Fragment() {
             holder.timeLineOwnerTextView.text =tileLineItem.userName
             holder.timelineTitleTextView.text =tileLineItem.title
             holder.timelineDateTextView.text =tileLineItem.date
+            holder.timelineDescription.text =tileLineItem.description
+            Glide.with(holder.logoImageView).load("https://matloob.herokuapp.com/user/logo/"+tileLineItem.owner).centerCrop().into(holder.logoImageView)
+
 
         }
 
