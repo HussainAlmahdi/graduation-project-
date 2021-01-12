@@ -17,8 +17,9 @@ class ActivityAfterLogIn : AppCompatActivity() {
         setContentView(R.layout.activity_after_log_in)
 
         val name = intent.getStringExtra("name")
+        val id = intent.getStringExtra("id")
         val token = intent.getStringExtra("token")
-        val phone = intent.getDoubleExtra("phone",0.0)
+        val phone = intent.getStringExtra("phone")
         val email = intent.getStringExtra("email")
         val description = intent.getStringExtra("description")
         bottomNavigationView = findViewById(R.id.bottom_navigation)
@@ -59,11 +60,11 @@ class ActivityAfterLogIn : AppCompatActivity() {
                     val fragment = ProfileFragment()
                     val args = Bundle().apply {
                         putString("name",name)
-                        putDouble("phone",phone)
+                        putString("phone",phone)
                         putString("email",email)
                         putString("description",description)
                         putString("token",token)
-
+                        putString("id",id)
                     }
 
                     fragment.arguments =args

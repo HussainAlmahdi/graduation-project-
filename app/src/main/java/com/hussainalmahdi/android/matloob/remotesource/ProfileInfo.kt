@@ -8,4 +8,5 @@ data class ProfileInfo(
     val name:String="",
     val description:String="",
     val service: String="",
+    val _id:String=""
 )

@@ -10,4 +10,5 @@ data class Register (
     @SerializedName("description") val description:String = "fsdhgsfddgs",
     @SerializedName("services") val services:String = "fdhhdfbvxcnhvxc",
     @SerializedName("logo") val logo:String = "http://hussainalmahdi.com/images/logo.png",
+
         )

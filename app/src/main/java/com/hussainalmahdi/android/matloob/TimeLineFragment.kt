@@ -132,7 +132,7 @@ class TimeLineFragment : Fragment() {
             holder.timeLineOwnerTextView.text =tileLineItem.userName
             holder.timelineTitleTextView.text =tileLineItem.title
             holder.timelineDateTextView.text =tileLineItem.date
-            holder.timelineDescription.text =tileLineItem.description
+            holder.timelineDescription.text =tileLineItem.description.take(70)+"..."
             Glide.with(holder.logoImageView).load("https://matloob.herokuapp.com/user/logo/"+tileLineItem.owner).centerCrop().into(holder.logoImageView)
 
 

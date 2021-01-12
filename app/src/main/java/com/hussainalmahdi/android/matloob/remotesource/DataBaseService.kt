@@ -46,9 +46,9 @@ interface DataBaseService {
     @POST("register")
     fun register(
         @Part("email") email:RequestBody,
+        @Part("name") name:RequestBody,
         @Part("password") password:RequestBody,
         @Part("phoneNumber") phoneNumber:RequestBody,
-        @Part("name") name:RequestBody,
         @Part("description") description:RequestBody,
         @Part("services") services:RequestBody,
         @Part logo  : MultipartBody.Part

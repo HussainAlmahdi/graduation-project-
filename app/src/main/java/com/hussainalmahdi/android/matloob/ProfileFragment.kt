@@ -15,6 +15,7 @@ import com.hussainalmahdi.android.zyara.R
 
 class ProfileFragment : Fragment() {
     private var name: String? = null
+    private var id: String? = null
     private var phone:String?=null
     private var email: String? = null
     private var description:String? =null
@@ -34,6 +35,7 @@ class ProfileFragment : Fragment() {
         email =  arguments?.getString("email")
         description=  arguments?.getString("description")
         token=  arguments?.getString("token")
+        id =arguments?.getString("id")
 
     }
 
@@ -53,7 +55,7 @@ class ProfileFragment : Fragment() {
         profilePhone.text = phone.toString()
         profileDescription.text =email
         profileEmail.text =description
-       // Glide.with(profileImageView).load().into(profileImageView)
+        Glide.with(profileImageView).load("https://matloob.herokuapp.com/user/logo/$id").into(profileImageView)
 
         becomeProviderButton= view.findViewById(R.id.provider)
         becomeProviderButton.setOnClickListener {

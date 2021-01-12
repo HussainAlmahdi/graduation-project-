@@ -171,6 +171,8 @@ class MainActivity : AppCompatActivity(),RegisterBody.UploadCallBack {
                                         putExtra("name", response.name)
                                         putExtra("phone", response.phoneNumber)
                                         putExtra("email", response.email)
+                                        putExtra("email", response.email)
+                                        putExtra("id", response._id)
                                         putExtra("description", response.description)
                                         putExtra("token", response.token)
                                     }
